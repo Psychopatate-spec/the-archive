@@ -16,3 +16,9 @@ mesh = SubResource("BoxMesh_lwwh2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741861333]
 shape = SubResource("BoxShape3D_lwwh2")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=735491443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5601624, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1111750032]
+current = true

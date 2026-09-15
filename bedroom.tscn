@@ -10,9 +10,6 @@ size = Vector3(5, 0.1, 5)
 
 [node name="Bedroom" type="Node3D" unique_id=1377784509]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=785797755]
-transform = Transform3D(1, 0, 0, 0, 0.93955684, 0.34239298, 0, -0.34239298, 0.93955684, 0, 1.0412674, 2.0016356)
-
 [node name="Floor" type="StaticBody3D" parent="." unique_id=918528502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055, 0)
 metadata/_edit_group_ = true

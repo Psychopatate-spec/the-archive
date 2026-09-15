@@ -1,9 +1,13 @@
 extends CharacterBody3D
 
+@onready var camera_pivot = $CameraPivot
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const MOUSE_SENSITIVITY = 0.005
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +30,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(event.relative.x * -MOUSE_SENSITIVITY)
+		camera_pivot.rotate_x(event.relative.y * -MOUSE_SENSITIVITY)
