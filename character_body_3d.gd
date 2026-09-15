@@ -34,4 +34,5 @@ func _physics_process(delta: float) -> void:
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(event.relative.x * -MOUSE_SENSITIVITY)
-		camera_pivot.rotate_x(event.relative.y * -MOUSE_SENSITIVITY)
+		# Make the camera not do 360s using clamp
+		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x + event.relative.y * -MOUSE_SENSITIVITY, -PI/2, PI/2)
