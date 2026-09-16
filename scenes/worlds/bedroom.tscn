@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bbf4itwhbpht2"]
+
+[ext_resource type="PackedScene" uid="uid://dqqlcjaqyouu0" path="res://scenes/player/character_body_3d.tscn" id="1_vhjvm"]
+[ext_resource type="PackedScene" uid="uid://cu2rvxu8en152" path="res://scenes/interactibles/drawer.tscn" id="2_mlq72"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lwwh2"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwwh2"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ev870"]
+size = Vector3(10, 5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ev870"]
+size = Vector3(10, 5, 0.1)
+
+[node name="Bedroom" type="Node3D" unique_id=1377784509]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=918528502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.055, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=2004602849]
+mesh = SubResource("BoxMesh_lwwh2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1933139356]
+shape = SubResource("BoxShape3D_lwwh2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1557394872]
+transform = Transform3D(-0.7525784, -0.6517479, 0.094076365, -0.27780092, 0.44376057, 0.8519995, -0.59703624, 0.61506206, -0.5150208, 6.561477, 11.561019, 3.4906425)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." unique_id=59117085 instance=ExtResource("1_vhjvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9375088, 0)
+
+[node name="Walls" type="Node3D" parent="." unique_id=1156079878]
+
+[node name="Wall1" type="StaticBody3D" parent="Walls" unique_id=1166388833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall1" unique_id=54399848]
+mesh = SubResource("BoxMesh_ev870")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall1" unique_id=1953576897]
+shape = SubResource("BoxShape3D_ev870")
+
+[node name="Wall2" type="StaticBody3D" parent="Walls" unique_id=1081813284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall2" unique_id=394726898]
+mesh = SubResource("BoxMesh_ev870")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2" unique_id=61157217]
+shape = SubResource("BoxShape3D_ev870")
+
+[node name="Wall3" type="StaticBody3D" parent="Walls" unique_id=1368876666]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall3" unique_id=516806325]
+mesh = SubResource("BoxMesh_ev870")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall3" unique_id=1221544924]
+shape = SubResource("BoxShape3D_ev870")
+
+[node name="Wall4" type="StaticBody3D" parent="Walls" unique_id=438712009]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls/Wall4" unique_id=695010021]
+mesh = SubResource("BoxMesh_ev870")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall4" unique_id=181056583]
+shape = SubResource("BoxShape3D_ev870")
+
+[node name="drawer" parent="." unique_id=1773205437 instance=ExtResource("2_mlq72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4.5)

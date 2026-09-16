@@ -6,6 +6,8 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.005
 
+var inventory = []
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -31,8 +33,12 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(event.relative.x * -MOUSE_SENSITIVITY)
 		# Make the camera not do 360s using clamp
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x + event.relative.y * -MOUSE_SENSITIVITY, -PI/2, PI/2)
+
+func get_key():
+	inventory.append("key")
