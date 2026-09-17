@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera_pivot = $CameraPivot
+@onready var interact_ui = $CanvasLayer/Interact
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -39,6 +40,11 @@ func _input(event):
 		rotate_y(event.relative.x * -MOUSE_SENSITIVITY)
 		# Make the camera not do 360s using clamp
 		camera_pivot.rotation.x = clamp(camera_pivot.rotation.x + event.relative.y * -MOUSE_SENSITIVITY, -PI/2, PI/2)
+
+func interact():
+	interact_ui.visible = true
+func stop_interact():
+	interact_ui.visible = false
 
 func get_key():
 	inventory.append("key")

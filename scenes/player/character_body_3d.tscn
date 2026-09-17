@@ -26,3 +26,16 @@ current = true
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot" unique_id=1128072091]
 spot_range = 6.1271586
 spot_angle = 57.656254
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1098903467]
+
+[node name="Interact" type="Label" parent="CanvasLayer" unique_id=1343176834]
+visible = false
+offset_left = 501.0
+offset_top = 305.0
+offset_right = 707.0
+offset_bottom = 359.0
+theme_override_font_sizes/font_size = 39
+text = "[E] Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
